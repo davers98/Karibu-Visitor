@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :user_logs
   resources :visitor_logs
   root 'public#home'
   devise_for :users
