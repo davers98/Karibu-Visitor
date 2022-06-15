@@ -22,6 +22,37 @@ This is an API for an attendance register management system. This API is intende
 |3	|```/users/edit```	|PUT	|Done	|Yes	|Update an employee's details|
 |4	|```/users/sign_out/```	|DELETE	|Done	|Yes	|Log out an employee|
 
+#### How to Register a user:
+
+1. End point to use: ```https://ellipsisattendance.herokuapp.com/users```
+2. Action to use: <strong>POST</strong>
+
+3. Enter the details as follows to register any user with his/her credentials. 
+
+```
+  {
+    "user": {
+      "email": "someone@someone.com",
+      "password": "123456789",
+      "password_confirmation": "123456789"
+    }
+  }
+```
+
+#### How to Login a user:
+
+1. End point to use: ```https://ellipsisattendance.herokuapp.com/users/sign_in```
+2. Action to use: <strong>POST</strong>
+
+3. Enter the details as follows to sign in any user with his/her credentials. 
+
+```
+  {
+      "email": "someone@someone.com",
+      "password": "123456789"
+  }
+```
+
 ### Employee Logs end points
 
 |#	|Routers	|Method	|Progress	|Is Private	|Description|
