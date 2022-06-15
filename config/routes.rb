@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
+  root 'public#home'
+
   resources :user_logs
   resources :visitor_logs
-  root 'public#home'
+ 
   devise_for :users
 
   get '/users', to: 'users#index'
   get '/user/:id', to: 'users#show'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+ 
 end
