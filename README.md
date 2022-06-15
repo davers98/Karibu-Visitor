@@ -26,13 +26,13 @@ This is an API for an attendance register management system. This API is intende
 
 |#	|Routers	|Method	|Progress	|Is Private	|Description|
 |---|---------|-------|---------|-----------|-----------|
-|1	|```/api/v1/user_logs```	|GET	|Done	|Yes	|Get all employees logs as an admin user|
-|2	|```/api/v1/user_log/:id```	|GET	|Done	|Yes	|Get an employee's log as an admin user|
+|1	|```/user_logs```	|GET	|Done	|Yes	|Get all employees logs as an admin user|
+|2	|```/user_log/:id```	|GET	|Done	|Yes	|Get an employee's log as an admin user|
 
 
 ### Visitor Logs End points
 
 |#	|Routers	|Method	|Progress	|Is Private	|Description|
 |---|---------|-------|---------|-----------|-----------|
-|1	|```/api/v1/visitor_logs```	|GET	|Done	|No	|Get all visitor logs|
-|2	|```/api/v1/visitor_log/:id```	|GET	|Done	|No	|Get a single visitor log detail|
+|1	|```/visitor_logs```	|GET	|Done	|No	|Get all visitor logs|
+|2	|```/visitor_log/:id```	|GET	|Done	|No	|Get a single visitor log detail|
