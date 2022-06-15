@@ -1,17 +1,24 @@
 class UserLogsController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_user_log, only: %i[ show update destroy ]
 
   # GET /user_logs
   def index
-    @user_logs = UserLog.all
+    if current_user && current_user.admin?
+      @user_logs = UserLog.all
 
-    render json: @user_logs
+      render json: @user_logs
+    else  
+      render json: { message: "You are not an admin" }
+    end
   end
 
   # GET /user_logs/1
   def show
-    render json: @user_log
+    if current_user && current_user.admin?
+      render json: @user_log
+    else 
+      render json: { message: "You are not an admin" }
+    end
   end
 
   # POST /user_logs
@@ -27,16 +34,20 @@ class UserLogsController < ApplicationController
 
   # PATCH/PUT /user_logs/1
   def update
-    if @user_log.update(user_log_params)
-      render json: @user_log
-    else
-      render json: @user_log.errors, status: :unprocessable_entity
+    unless current_user && current_user.admin?
+      if @user_log.update(user_log_params)
+        render json: @user_log
+      else
+        render json: @user_log.errors, status: :unprocessable_entity
+      end
     end
   end
 
   # DELETE /user_logs/1
   def destroy
-    @user_log.destroy
+    if current_user && current_user.admin?
+      @user_log.destroy
+    end
   end
 
   private
