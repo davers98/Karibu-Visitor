@@ -1,24 +1,38 @@
-# README
+# ATTENDANCE REGISTRY API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an API for an attendance register management system. This API is intended to be used in a mobile and web system to ensure users are able to login and fill in the data necessary to manage daily attendance of employees.
 
-Things you may want to cover:
+## Tech Stack Used
 
-* Ruby version
+  - Ruby on Rails 7
+  - PostgreSQL
 
-* System dependencies
+## How to consume the API
 
-* Configuration
+  - The API can be accessed on this link ```https://ellipsisattendance.herokuapp.com```
 
-* Database creation
+## END POINTS USED
 
-* Database initialization
+### Employees End points
 
-* How to run the test suite
+|#	|Routers	|Method	|Progress	|Is Private	|Description|
+|---|---------|-------|---------|-----------|-----------|
+|1	|```/users```	|POST	|Done	|No	|Create a new employee|
+|2	|```/users/sign_in```	|POST	|Done	|No	| Log in user|
+|3	|```/users/edit```	|PUT	|Done	|Yes	|Update an employee's details|
+|4	|```/users/sign_out/```	|DELETE	|Done	|Yes	|Log out an employee|
 
-* Services (job queues, cache servers, search engines, etc.)
+### Employee Logs end points
 
-* Deployment instructions
+|#	|Routers	|Method	|Progress	|Is Private	|Description|
+|---|---------|-------|---------|-----------|-----------|
+|1	|```/api/v1/user_logs```	|GET	|Done	|Yes	|Get all employees logs as an admin user|
+|2	|```/api/v1/user_log/:id```	|GET	|Done	|Yes	|Get an employee's log as an admin user|
 
-* ...
+
+### Visitor Logs End points
+
+|#	|Routers	|Method	|Progress	|Is Private	|Description|
+|---|---------|-------|---------|-----------|-----------|
+|1	|```/api/v1/visitor_logs```	|GET	|Done	|No	|Get all visitor logs|
+|2	|```/api/v1/visitor_log/:id```	|GET	|Done	|No	|Get a single visitor log detail|

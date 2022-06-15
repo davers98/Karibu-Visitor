@@ -1,4 +1,5 @@
 class UserLogsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_user_log, only: %i[ show update destroy ]
 
   # GET /user_logs
@@ -42,6 +43,10 @@ class UserLogsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user_log
       @user_log = UserLog.find(params[:id])
+    end
+
+    def set_admin 
+      current_user.admin?
     end
 
     # Only allow a list of trusted parameters through.
