@@ -53,6 +53,12 @@ This is an API for an attendance register management system. This API is intende
   }
 ```
 
+#### How to fetch all users:
+
+1. End point to use: ```https://ellipsisattendance.herokuapp.com/users```
+2. Action to use: <strong>GET</strong>
+
+
 ### Employee Logs end points
 
 |#	|Routers	|Method	|Progress	|Is Private	|Description|
