@@ -54,3 +54,4 @@ gem "active_model_serializers", "~> 0.10.13"
 gem "google-cloud-storage", "~> 1.36", require: false
 
 gem "aws-sdk-rails", "~> 3.6"
+gem "aws-sdk-s3", require: false
