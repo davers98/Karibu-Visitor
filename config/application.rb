@@ -40,7 +40,5 @@ module Register
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use config.session_store, config.session_options
 
-    config.secret_key_base = '3b958f408d7f8f71ba58de843463c54c33c2b353e915989fdf8ac827e28b8a59a30d5025cdaa082d0fd1a05bd03cf2756337c94a9ed84e6d866d879912e53019'
-
   end
 end
