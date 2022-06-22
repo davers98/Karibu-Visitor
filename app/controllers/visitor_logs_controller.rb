@@ -3,20 +3,14 @@ class VisitorLogsController < ApplicationController
 
   # GET /visitor_logs
   def index
-    if current_user && current_user.admin?
-      @visitor_logs = VisitorLog.all
+    @visitor_logs = VisitorLog.all
 
-      render json: @visitor_logs
-    else
-      render json: { message: "You are not an admin" }
-    end
+    render json: @visitor_logs
   end
 
   # GET /visitor_logs/1
   def show
-    if current_user && current_user.admin?
-      render json: @visitor_log
-    end
+    render json: @visitor_log
   end
 
   # POST /visitor_logs

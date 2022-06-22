@@ -3,21 +3,13 @@ class UserLogsController < ApplicationController
 
   # GET /user_logs
   def index
-    if current_user && current_user.admin?
       @user_logs = UserLog.all
       render json: @user_logs
-    else  
-      render json: { message: "You are not an admin" }
-    end
   end
 
   # GET /user_logs/1
   def show
-    if current_user && current_user.admin?
-      render json: @user_log
-    else 
-      render json: { message: "You are not an admin" }
-    end
+    render json: @user_log
   end
 
   # POST /user_logs
@@ -33,20 +25,16 @@ class UserLogsController < ApplicationController
 
   # PATCH/PUT /user_logs/1
   def update
-    unless current_user && current_user.admin?
-      if @user_log.update(user_log_params)
-        render json: @user_log
-      else
-        render json: @user_log.errors, status: :unprocessable_entity
-      end
+    if @user_log.update(user_log_params)
+      render json: @user_log
+    else
+      render json: @user_log.errors, status: :unprocessable_entity
     end
   end
 
   # DELETE /user_logs/1
   def destroy
-    if current_user && current_user.admin?
-      @user_log.destroy
-    end
+    @user_log.destroy
   end
 
   private
