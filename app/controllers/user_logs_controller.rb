@@ -5,7 +5,6 @@ class UserLogsController < ApplicationController
   def index
     if current_user && current_user.admin?
       @user_logs = UserLog.all
-
       render json: @user_logs
     else  
       render json: { message: "You are not an admin" }
