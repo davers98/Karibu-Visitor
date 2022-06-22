@@ -32,6 +32,7 @@ This is an API for an attendance register management system. This API is intende
 ```
   {
     "user": {
+      "name": "Someone Someone",
       "email": "someone@someone.com",
       "password": "123456789",
       "password_confirmation": "123456789"
