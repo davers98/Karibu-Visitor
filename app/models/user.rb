@@ -6,6 +6,4 @@ class User < ApplicationRecord
 
   has_many :user_logs
 
-  has_one_attached :image
-
 end
