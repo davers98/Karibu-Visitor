@@ -9,7 +9,7 @@ class UserLogsController < ApplicationController
 
   # GET /user_logs/1
   def show
-    render json: @user_log
+    render json: @user_log.current_user
   end
 
   # POST /user_logs
@@ -26,15 +26,17 @@ class UserLogsController < ApplicationController
   # PATCH/PUT /user_logs/1
   def update
     if @user_log.update(user_log_params)
-      render json: @user_log
-    else
-      render json: @user_log.errors, status: :unprocessable_entity
+    #   render json: @user_log
+    # else
+      render json: @user_log.errors, { message: "You are not allowed to perform this operation" }
     end
   end
 
   # DELETE /user_logs/1
   def destroy
-    @user_log.destroy
+    if @user_log.destroy 
+      render json: { message: "You are not allowed to perform this operation" }
+    end
   end
 
   private

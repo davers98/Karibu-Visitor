@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root 'public#home'
 
-  resources :user_logs
-  resources :visitor_logs
+  resources :user_logs, except: [:update, :destroy]
+  resources :visitor_logs, except: [:update, :destroy]
  
   devise_for :users
 
