@@ -2,6 +2,8 @@
 
 This is an API for an attendance register management system. This API is intended to be used in a mobile and web system to ensure users are able to login and fill in the data necessary to manage daily attendance of employees.
 
+![screenshot](./public/schema.png)
+
 ## Tech Stack Used
 
   - Ruby on Rails 7
