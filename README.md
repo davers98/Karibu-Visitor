@@ -70,6 +70,8 @@ This is an API for an attendance register management system. This API is intende
 
 ### Employee Logs end points
 
+#### Only an admin user can access these end points
+
 |#	|Routers	|Method	|Progress	|Is Private	|Description|
 |---|---------|-------|---------|-----------|-----------|
 |1	|```/user_logs```	|GET	|Done	|Yes	|Get all employees logs as an admin user|
@@ -77,6 +79,8 @@ This is an API for an attendance register management system. This API is intende
 
 
 ### Visitor Logs End points
+
+#### Only an admin user can access these end points
 
 |#	|Routers	|Method	|Progress	|Is Private	|Description|
 |---|---------|-------|---------|-----------|-----------|
