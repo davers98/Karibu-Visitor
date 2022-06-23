@@ -27,9 +27,9 @@ class VisitorLogsController < ApplicationController
   # PATCH/PUT /visitor_logs/1
   def update
     if @visitor_log.update(visitor_log_params)
-    #   render json: @visitor_log
-    # else
-      render json: @visitor_log.errors, { message: "You are not allowed to perform this operation" }
+      render json: @visitor_log
+    else
+      render json: @visitor_log.errors, status: :unprocessable_entity
     end
   end
 
