@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   # PUT|PATCH /users/1
   def update
     if @user.update(user_params)
-      head :ok
+      render json: { message: "Successfully updated user" }
     else
       head :unprocessable_entity
     end
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
   def destroy 
     @user.destroy
-    render json: { message: "Successfully delete user from database" }
+    render json: { message: "Successfully deleted user from database" }
   end
 
   private 
