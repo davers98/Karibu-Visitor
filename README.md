@@ -21,9 +21,9 @@ This is an API for an attendance register management system. This API is intende
 |---|---------|-------|---------|-----------|-----------|
 |1	|```/users```	|POST	|Done	|No	|Create a new employee|
 |2	|```/users/sign_in```	|POST	|Done	|No	| Log in user|
-|3	|```/users/:id```	|PUT	|Done	|Yes	|Update an employee's details|
+|3	|```/user/:id```	|PUT	|Done	|Yes	|Update an employee's details|
 |4	|```/users/sign_out```	|DELETE	|Done	|Yes	|Log out an employee's session|
-|5	|```/users/:id```	|DELETE	|Done	|Yes	|Delete an employee from database|
+|5	|```/user/:id```	|DELETE	|Done	|Yes	|Delete an employee from database|
 
 #### How to Register a user:
 

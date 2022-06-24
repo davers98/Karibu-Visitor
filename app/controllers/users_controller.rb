@@ -8,16 +8,21 @@ class UsersController < ApplicationController
   end
 
   # PUT|PATCH /users/1
-  # def update
-  #   if @user.update(user_params)
-  #     head :ok
-  #   else
-  #     head :unprocessable_entity
-  #   end
-  # end
+  def update
+    if @user.update(user_params)
+      head :ok
+    else
+      head :unprocessable_entity
+    end
+  end
 
   def show
     render json: @user
+  end
+
+  def destroy 
+    @user.destroy
+    render json: { message: "Successfully delete user from database" }
   end
 
   private 
@@ -26,7 +31,7 @@ class UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
   end
 
-  # def user_params
-  #   params.require(:user).permit(:name, :position, :phone_number, :image)
-  # end
+  def user_params
+    params.require(:user).permit(:name, :position, :phone_number, :image)
+  end
 end
