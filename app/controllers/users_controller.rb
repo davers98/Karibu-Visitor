@@ -8,6 +8,9 @@ class UsersController < ApplicationController
   end
 
   # PUT|PATCH /users/1
+  def edit 
+  end
+  
   def update
     if @user.update(user_params)
       render json: { message: "Successfully updated user" }
